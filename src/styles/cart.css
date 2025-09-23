@@ -1,0 +1,216 @@
+/* Layout */
+.cart-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #111;
+}
+
+/* Cart items (left side) */
+.cart-items {
+  flex: 2;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.cart-items h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007185;
+  /* Amazon link color */
+  margin-bottom: 5px;
+}
+
+.cart-item-price {
+  font-size: 0.95rem;
+  color: #111;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-item-actions input {
+  width: 60px;
+  padding: 5px;
+  font-size: 0.9rem;
+}
+
+.cart-item-actions button {
+  background: none;
+  border: none;
+  color: #007185;
+  cursor: pointer;
+}
+
+.cart-item-actions button:hover {
+  text-decoration: underline;
+}
+
+.clear-cart-btn {
+  margin-top: 15px;
+  background: #f0f2f2;
+  border: 1px solid #ddd;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clear-cart-btn:hover {
+  background: #e7e9e9;
+}
+
+/* Cart Summary (right side) */
+.cart-summary {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f6f6f6;
+  height: fit-content;
+}
+
+.cart-summary h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.summary-price {
+  font-weight: bold;
+  color: #B12704;
+  /* Amazon's red price */
+}
+
+/* Cost breakdown */
+.cost-breakdown p {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.cost-breakdown .total-line {
+  border-top: 1px solid #ddd;
+  padding-top: 8px;
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Coupon Section */
+.coupon-section {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.coupon-section input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.coupon-section .apply-btn {
+  padding: 8px 12px;
+  background: #f0f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.coupon-section .apply-btn:hover {
+  background: #e7e9e9;
+}
+
+/* Gift Option */
+.gift-option {
+  margin: 15px 0;
+  font-size: 0.9rem;
+}
+
+.gift-option label {
+  margin-left: 5px;
+}
+
+/* Delivery Info */
+.delivery-info {
+  margin: 15px 0;
+  font-size: 0.9rem;
+  color: #111;
+}
+
+.shipping-note {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* Checkout Button (Amazon-style yellow) */
+.checkout-btn {
+  width: 100%;
+  background: #FFA41C;
+  border: 1px solid #FF8F00;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.checkout-btn:hover {
+  background: #FF8F00;
+  border: 1px solid #e67600;
+}
+
+/* Secure checkout */
+.secure-checkout {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  color: #555;
+}
+
+.lock-icon {
+  margin-right: 5px;
+}
+
+/* Return Policy / Trust */
+.return-policy {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 6px;
+}

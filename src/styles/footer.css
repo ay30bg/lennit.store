@@ -1,0 +1,36 @@
+/* ===== Import Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* ===== Footer ===== */
+.footer {
+  background: #232f3e;
+  color: #fff;
+  text-align: center;
+  padding: 30px 15px;
+  margin-top: auto; /* ensures it stays at bottom */
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #bbb;
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #eee;
+  margin: 0 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: #1e90ff;
+}
