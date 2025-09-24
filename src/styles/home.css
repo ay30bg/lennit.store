@@ -143,10 +143,15 @@ h4,
 .featured h2,
 .recommended h2,
 .deals h2 {
+  color: #111;
   font-size: 1.3rem;
   margin-bottom: 0.8rem;
   padding-left: 0.3rem;
   font-family: 'Montserrat', sans-serif;
+}
+
+.deals h2 {
+  color: #fff;
 }
 
 /* Section containers */
