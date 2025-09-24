@@ -188,7 +188,7 @@ export default function Home() {
           <a href="#featured" className="hero-btn">
             Shop Now
           </a>
-        </div>
+        </div> 
       </section>
 
       {/* Categories */}
@@ -211,6 +211,22 @@ export default function Home() {
             name="Kitchen"
             img="https://media.gettyimages.com/id/1135086435/photo/a-serene-zero-waste-kitchen-scene-close-up.jpg?s=612x612&w=0&k=20&c=AtqHW8x7MzqGvP1sPos92BCnQzf1S54p_am0GtEQQPg="
           />
+          <CategoryCard
+            name="Children"
+            img="https://images.unsplash.com/photo-1615085457637-425d9b184c99?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGtpZHMlMjBhbmQlMjB0b3lzfGVufDB8fDB8fHww"
+          />
+          <CategoryCard
+            name="Books"
+            img="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Ym9va3N8ZW58MHx8MHx8fDA%3D"
+          />
+          {/* <CategoryCard
+            name="Baby Products"
+            img="https://plus.unsplash.com/premium_photo-1661425708655-f36618f20fa8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fGJhYnklMjBwcm9kdWN0c3xlbnwwfHwwfHx8MA%3D%3D"
+          />
+          <CategoryCard
+            name="Health & Beauty"
+            img=""
+          /> */}
         </div>
       </section>
 
