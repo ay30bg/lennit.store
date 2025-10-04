@@ -1,0 +1,538 @@
+[
+  {
+    "id": 1,
+    "name": "Automatic Water Dispenser",
+    "price": 999,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/19/1790323/1.jpg?8904",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/19/1790323/1.jpg?8904",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/28/8467413/1.jpg?5127"
+    ],
+    "desc": "Latest iPhone with A15 Bionic chip.",
+    "stock": 12,
+    "category": "Kitchen"
+  },
+  {
+    "id": 2,
+    "name": "Premium Quality Plastic Plate Rack With Cover & Drainer",
+    "price": 120,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/52/4838983/1.jpg?0308",
+     "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/52/4838983/1.jpg?0308"
+],
+    "desc": "Stylish and comfortable running sneakers.",
+    "stock": 8,
+    "category": "Kitchen"
+  },
+  {
+    "id": 3,
+    "name": "Laxasfit Ultra Classy New Ultra 7 In 1 Strap Smartwatch",
+    "price": 199,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/08/0362193/2.jpg?4215",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/08/0362193/2.jpg?4215",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/40/4091814/1.jpg?7684"
+    ],
+    "desc": "Track your fitness with style.",
+    "stock": 15,
+    "category": "Accessories"
+  },
+  {
+    "id": 4,
+    "name": "High Power Portable Vacuum Cleaner",
+    "price": 250,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/86/0526404/1.jpg?0490",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/86/0526404/1.jpg?0490"
+    ],
+    "desc": "Noise cancelling with crystal clear sound.",
+    "stock": 5,
+    "category": "Electronics"
+  },
+  {
+    "id": 5,
+    "name": "Premium Wool Car Interior Set – Steering Wheel, Gear, and Handbrake Covers",
+    "price": 1499,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/57/3647104/1.jpg?0827",
+    "desc": "High performance laptop for gamers.",
+    "stock": 7,
+    "category": "Accessories"
+  },
+  {
+    "id": 6,
+    "name": "Small Guitar Vintage Series",
+    "price": 180,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/38/9326882/1.jpg?4635",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/38/9326882/1.jpg?4635"
+    ],
+    "desc": "Classic black leather jacket.",
+    "stock": 20,
+    "category": "Children"
+  },
+  {
+    "id": 7,
+    "name": "Multi-Use Foldable Chopping Board",
+    "price": 89,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/53/1685804/3.jpg?9488",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/53/1685804/3.jpg?9488",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/53/1685804/2.jpg?9488"
+    ],
+    "desc": "Portable speaker with deep bass.",
+    "stock": 25,
+    "category": "Kitchen"
+  },
+  {
+    "id": 8,
+    "name": "Manual Blender, Food Processor & Grinder",
+    "price": 799,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/57/3647104/1.jpg?0827",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/57/3647104/1.jpg?0827"
+    ],
+    "desc": "Ultra HD Smart TV with HDR.",
+    "stock": 9,
+    "category": "Kitchen"
+  },
+  {
+    "id": 9,
+    "name": "Wet Basket Vegetable Cutter",
+    "price": 60,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/96/9175151/1.jpg?4680",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/96/9175151/1.jpg?4680",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/02/0067743/1.jpg?1489",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/56/782359/1.jpg?7237"
+    ],
+    "desc": "Durable and stylish travel backpack.",
+    "stock": 30,
+    "category": "Kitchen"
+  },
+  {
+    "id": 10,
+    "name": "Binatone Blender with Grinder",
+    "price": 1099,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/29/8658663/1.jpg?6408",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/29/8658663/1.jpg?6408",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/30/4786963/1.jpg?1353",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/64/7190673/1.jpg?2198"
+    ],
+    "desc": "Professional photography camera.",
+    "stock": 6,
+    "category": "Electronics"
+  },
+  {
+    "id": 11,
+    "name": "Essential Personal Glass Scale",
+    "price": 35,
+    "image": "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/33/9809143/1.jpg?2627",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/33/9809143/1.jpg?2627",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/12/5172942/1.jpg?7694"
+    ],
+    "desc": "Ergonomic wireless mouse with long battery life.",
+    "stock": 50,
+    "category": "Electronics"
+  },
+  {
+    "id": 12,
+    "name": "Syinix Electric Kettle",
+    "price": 120,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/71/1968414/2.jpg?8156",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/71/1968414/2.jpg?8156",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/94/3466814/1.jpg?3448"
+    ],
+    "desc": "RGB backlit gaming keyboard with blue switches.",
+    "stock": 40,
+    "category": "Electronics"
+  },
+  {
+    "id": 13,
+    "name": "Sujata Powermatic Plus",
+    "price": 30,
+    "image": "https://pbs.twimg.com/media/GOls5npWsAEEMIO.jpg",
+    "images": [
+      "https://pbs.twimg.com/media/GOls5npWsAEEMIO.jpg",
+      "https://sc04.alicdn.com/kf/H23354b5c7dea41f8be4ae8d99df0c4616.jpg"
+    ],
+    "desc": "Lightweight and breathable sports shorts.",
+    "stock": 60,
+    "category": "Electronics"
+  },
+  {
+    "id": 14,
+    "name": "Tokiwa Electric Yam Pounding Processing Machine",
+    "price": 45,
+    "image": "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/58/0861712/1.jpg?3150",
+    "desc": "Non-slip yoga mat for daily workouts.",
+    "stock": 25,
+    "category": "Electronics"
+  },
+  {
+    "id": 15,
+    "name": "6V Battery Operated Kids’ Ride-On Police Motorbike – Red",
+    "price": 220,
+    "image": "https://www.bigw.com.au/medias/sys_master/images/images/h9f/h91/97511444480030.jpg",
+    "desc": "Give your little officer the ultimate adventure with this 6V Electric Ride-On Police Motorcycle. Designed in a sleek red finish, this motorbike lets kids enjoy realistic play while developing coordination and motor skills. Powered by a rechargeable 6V battery, it offers a smooth and safe ride, perfect for both indoor and outdoor fun.\n\nEquipped with easy-to-use foot pedals, sturdy wheels, and comfortable seating, this ride-on ensures a fun and secure driving experience. With police-themed styling and details, kids can imagine themselves on exciting missions while parents enjoy peace of mind knowing it’s built for safety and durability.",
+    "stock": 14,
+    "category": "Children"
+  },
+  {
+    "id": 16,
+    "name": "USB Desk Fan, Air Circulator Fan with Led Light, 3 Speeds Table Fan",
+    "price": 150,
+    "image": "https://m.media-amazon.com/images/I/71mRGw9m6bL._AC_SX679_.jpg",
+    "desc": "Brew barista-quality coffee at home.",
+    "stock": 10,
+    "category": "Electronics"
+  },
+  {
+    "id": 17,
+    "name": "Stainless Steel Double-Layer Mini Electric Cooking Pot",
+    "price": 90,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/93/7759292/1.jpg?3023",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/93/7759292/1.jpg?3023",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/93/7759292/2.jpg?3023",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/32/278407/2.jpg?0246"
+    ],
+    "desc": "Polarized sunglasses with UV protection.",
+    "stock": 35,
+    "category": "Electronics"
+  },
+  {
+    "id": 18,
+    "name": "Stainless Steel Strainer/Iron Sieve (6 In 1)",
+    "price": 220,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/89/0674814/1.jpg?2223",
+    "desc": "Warm insulated winter coat.",
+    "stock": 18,
+    "category": "Kitchen"
+  },
+  {
+    "id": 19,
+    "name": "3-Liter Whistling Stove Kettle for Home and Camping Use",
+    "price": 40,
+    "image": "https://i5.walmartimages.com/asr/582a95d2-fb6b-4f18-b4b4-20473a8de721.a948a0a20bbd45dee3643474ce6da4ac.jpeg",
+    "desc": "Fast boiling stainless steel kettle.",
+    "stock": 50,
+    "category": "Kitchen",
+    "variations": {
+      "colors": [
+        {
+          "name": "Blue",
+          "image": "https://i5.walmartimages.com/asr/582a95d2-fb6b-4f18-b4b4-20473a8de721.a948a0a20bbd45dee3643474ce6da4ac.jpeg"
+        },
+        {
+          "name": "Red",
+          "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/64/846828/1.jpg?5033"
+        },
+        {
+          "name": "Green",
+          "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/87/3314062/1.jpg?4664"
+        }
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "name": "Vegetable Chopper",
+    "price": 99,
+    "image": "https://i5.walmartimages.com/asr/2fd916e4-2aad-40a6-a788-cae2fca9d4fa.97fc8791acda86f45aba6b2ef5a34d09.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+     "images": [
+      "https://i5.walmartimages.com/asr/2fd916e4-2aad-40a6-a788-cae2fca9d4fa.97fc8791acda86f45aba6b2ef5a34d09.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      "https://i5.walmartimages.com/asr/a6083b51-842b-40d2-8b03-1cf15157d20b.25ed4fdcbbe2500602e435a0f8ab4d7c.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
+    ],
+    "desc": "Track steps, sleep, and heart rate.",
+    "stock": 42,
+    "category": "Kitchen"
+  },
+  {
+    "id": 21,
+    "name": "Garlic Press Crusher",
+    "price": 180,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/37/7335814/1.jpg?5567",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/37/7335814/1.jpg?5567",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/06/4911604/1.jpg?3996",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/06/4911604/2.jpg?3996"
+    ],
+    "desc": "Removes allergens and dust from air.",
+    "stock": 12,
+    "category": "Kitchen"
+  },
+  {
+    "id": 22,
+    "name": "Colorful Plastic Sieve",
+    "price": 499,
+    "image": "https://www.hadelgifts.com/wp-content/uploads/2021/11/IMG_20211129_152949_072-removebg-preview.png.webp",
+    "desc": "Next-gen console with stunning graphics.",
+    "stock": 16,
+    "category": "Kitchen"
+  },
+  {
+    "id": 23,
+    "name": "Airtight Plastic Food Storage Containers",
+    "price": 350,
+    "image": "https://www.makro.pro/_next/image?url=https%3A%2F%2Fimages.mango-prod.siammakro.cloud%2FSOURCE%2F7b12b9fdea3b4da8a29228c47119ee09&w=1080&q=80",
+    "desc": "Waterproof 4K action camera.",
+    "stock": 22,
+    "category": "Kitchen"
+  },
+  {
+    "id": 24,
+    "name": "Kids Lunch Bag",
+    "price": 130,
+    "image": "https://shoproyale.ng/wp-content/uploads/2021/07/421.jpg",
+    "desc": "Lightweight e-reader with glare-free screen.",
+    "stock": 28,
+    "category": "Children"
+  },
+  {
+    "id": 25,
+    "name": "Portable Lunch Box For Adults",
+    "price": 200,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/16/9386493/1.jpg?0865",
+    "desc": "Quick and efficient cooking.",
+    "stock": 15,
+    "category": "Kitchen"
+  },
+  {
+    "id": 26,
+    "name": "Rose-Shaped Bottle Design Umbrella",
+    "price": 899,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/03/8516014/1.jpg?9352",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/03/8516014/1.jpg?9352",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/80/4243743/1.jpg?9396"
+    ],
+    "desc": "Energy efficient double-door refrigerator.",
+    "stock": 9,
+    "category": "Children"
+  },
+  {
+    "id": 27,
+    "name": "Foldable Silicone Water Bottle",
+    "price": 250,
+    "image": "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/15/0454463/1.jpg?4361",
+    "images": [
+       "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/15/0454463/1.jpg?4361",
+       "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/40/8798342/1.jpg?5785"
+    ],
+    "desc": "Elegant analog wristwatch.",
+    "stock": 33,
+    "category": "Children"
+  },
+  {
+    "id": 28,
+    "name": "Oil Stain Cleaner for Kitchen",
+    "price": 799,
+    "image": "https://down-my.img.susercontent.com/file/55c06efaeb0e16c4d16d04ea45a5131e",
+    "desc": "Foldable electric scooter with long range.",
+    "stock": 11,
+    "category": "Kitchen"
+  },
+  {
+    "id": 29,
+    "name": "Adjustable Whiteboard for Kids",
+    "price": 220,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_750789-MLM84220076410_052025-O.webp",
+    "desc": "Waterproof 4-person camping tent.",
+    "stock": 19,
+    "category": "Children"
+  },
+  {
+    "id": 30,
+    "name": "Wireless Bluetooth Speaker JBH JB-5001",
+    "price": 450,
+    "image": "https://celustore.online/tienda/wp-content/uploads/2022/06/jbh-chico.jpg",
+    "desc": "Solid-body electric guitar.",
+    "stock": 8,
+    "category": "Electronics"
+  },
+  {
+    "id": 31,
+    "name": "Pest Reject New Ultrasonic Electronic Insecticide",
+    "price": 210,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/10/3257814/1.jpg?0917",
+    "desc": "Control home temperature from phone.",
+    "stock": 14,
+    "category": "Electronics"
+  },
+  {
+    "id": 32,
+    "name": "Peskoe Electric Kettle 2.0L",
+    "price": 320,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/51/6465483/2.jpg?0784",
+    "desc": "Automatic cleaning robot with sensors.",
+    "stock": 17,
+    "category":"Electronics"
+  },
+  {
+    "id": 33,
+    "name": "SWS HI-TECH CERAMIC CARTRIDGE WATER PURIFIER",
+    "price": 249,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/46/8815814/1.jpg?0446",
+    "desc": "Noise cancelling wireless earbuds.",
+    "stock": 27,
+    "category": "Kitchen"
+  },
+  {
+    "id": 34,
+    "name": "Nice Souvenir Vacuum Water Botttle Flask 400ml",
+    "price": 300,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/92/0176204/1.jpg?9966",
+    "desc": "Comfortable chair for long gaming sessions.",
+    "stock": 13,
+    "category": "Children"
+  },
+  {
+    "id": 35,
+    "name": "Rechargeable Electric Arc Lighter for BBQ, Kitchen, Candle",
+    "price": 4999,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/31/7984814/1.jpg?7733",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/31/7984814/1.jpg?7733",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/44/8193814/1.jpg?8557",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/30/3813814/1.jpg?3370"
+    ],
+    "desc": "Light your essentials with ease and safety using this sleek Rechargeable Electric Arc Lighter. Designed with a windproof and flameless arc technology, it ensures reliable ignition even in windy conditions—perfect for outdoor BBQs, camping, and everyday use in the kitchen or for lighting candles. Featuring a long, flexible neck, this lighter makes it effortless to reach deep candle jars, grills, stoves, or fireplaces without burning your fingers. The built-in USB rechargeable battery eliminates the need for gas or fluid refills, offering an eco-friendly and cost-saving alternative. The safety switch and child-lock design provide extra protection, making it safe for family use. \n\nKey Features:\n- Windproof & flameless electric arc for consistent ignition\n- Flexible long neck for hard-to-reach places\n- USB rechargeable, eco-friendly, no gas or butane needed\n- Safety lock & auto shut-off for worry-free use\n- Ideal for BBQs, candles, fireplaces, gas stoves, and camping\n\nUpgrade your lighting experience with this modern, convenient, and safe solution—perfect for both indoor and outdoor use.",
+    "stock": 21,
+    "category": "Kitchen"
+  },
+  {
+    "id": 36,
+    "name": "Battery-Powered Yellow McLaren Ride-On Car for Kids with Remote Control Option",
+    "price": 280,
+    "image": "https://tiimg.tistatic.com/fp/2/007/785/kids-light-weight-long-durable-non-toxic-yellow-car-693.jpg",
+    "desc": "Safe and comfortable baby stroller.",
+    "stock": 10,
+    "category": "Children"
+  },
+  {
+    "id": 37,
+    "name": "Roll Up Disc Pull Out Shopping Bag Super Compact 15L Capacity",
+    "price": 60,
+    "image": "https://sc04.alicdn.com/kf/Hdd5ae6a9321d4cf38be40894690498711.jpg",
+    "desc": "Adjustable LED desk lamp.",
+    "stock": 50,
+    "category": "Kitchen"
+  },
+  {
+    "id": 38,
+    "name": "Hotpot Stainless steel pot with Divider",
+    "price": 25,
+    "image": "https://m.media-amazon.com/images/I/61tyqPoS10L._AC_SL1036_.jpg",
+    "desc": "Insulated stainless steel water bottle.",
+    "stock": 70,
+    "category": "Kitchen"
+  },
+  {
+    "id": 39,
+    "name": "Fiesta Wine Glass Set of 6pcs",
+    "price": 20,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/13/274987/1.jpg?5321",
+    "desc": "Comfortable indoor slippers.",
+    "stock": 80,
+    "category": "Kitchen"
+  },
+  {
+    "id": 40,
+    "name": "Motorized Knife Sharpener",
+    "price": 120,
+    "image": "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/34/1278293/1.jpg?8756",
+    "images": [
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/34/1278293/1.jpg?8756",
+      "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/34/1278293/2.jpg?8756"
+    ],
+    "desc": "Cozy bean bag chair for relaxation.",
+    "stock": 15,
+    "category": "Kitchen"
+  },
+  {
+    "id": 41,
+    "name": "Sudoku Toothpaste",
+    "price": 500,
+    "image": "https://sudokutoothpaste.com/_assets/media/dd663ff09c768a41d080820eb2c85a9a.png",
+    "desc": "Lightweight mountain bike.",
+    "stock": 9,
+    "category": "Cosmetics"
+  },
+  {
+    "id": 42,
+    "name": "Automatic Toothpick Holder & Dispenser",
+    "price": 180,
+    "image": "https://hengchangtoys.com/Photo/Big/45/HC230307.jpg",
+    "desc": "Non-stick cooking pans, set of 5.",
+    "stock": 24,
+    "category": "Kitchen"
+  },
+  {
+    "id": 43,
+    "name": "2 in 1 Blender Powerful Smoothies Maker Blender",
+    "price": 70,
+    "image": "https://image.made-in-china.com/202f0j00EpubODTrukoa/Food-Processor-Vs-Blender-Reddit-Ninja-Blender-Pics-Vita-Max-Blender-Jucier-Blender.webp",
+    "desc": "Long-lasting fragrance.",
+    "stock": 40,
+    "category": "Kitchen"
+  },
+  {
+    "id": 44,
+    "name": "Wall Clock",
+    "price": 55,
+    "image": "https://via.placeholder.com/300x300?text=Wall+Clock",
+    "desc": "Minimalist wall clock design.",
+    "stock": 36
+  },
+  {
+    "id": 45,
+    "name": "Bed Sheets",
+    "price": 100,
+    "image": "https://via.placeholder.com/300x300?text=Bed+Sheets",
+    "desc": "Soft cotton bedsheets, set of 3.",
+    "stock": 18
+  },
+  {
+    "id": 46,
+    "name": "Lawn Mower",
+    "price": 400,
+    "image": "https://via.placeholder.com/300x300?text=Lawn+Mower",
+    "desc": "Electric lawn mower for easy gardening.",
+    "stock": 7
+  },
+  {
+    "id": 47,
+    "name": "Tennis Racket",
+    "price": 150,
+    "image": "https://via.placeholder.com/300x300?text=Tennis+Racket",
+    "desc": "Lightweight graphite tennis racket.",
+    "stock": 20
+  },
+  {
+    "id": 48,
+    "name": "Sofa",
+    "price": 1200,
+    "image": "https://via.placeholder.com/300x300?text=Sofa",
+    "desc": "Modern 3-seater fabric sofa.",
+    "stock": 5
+  },
+  {
+    "id": 49,
+    "name": "Dining Table",
+    "price": 900,
+    "image": "https://via.placeholder.com/300x300?text=Dining+Table",
+    "desc": "Wooden dining table, seats 6.",
+    "stock": 4
+  },
+  {
+    "id": 50,
+    "name": "Smart Light Bulbs",
+    "price": 60,
+    "image": "https://via.placeholder.com/300x300?text=Smart+Bulbs",
+    "desc": "Color-changing WiFi smart bulbs, pack of 4.",
+    "stock": 45
+  }
+]

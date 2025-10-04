@@ -1,0 +1,144 @@
+.product-card {
+  background: #fff;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 220px;
+  padding: 1px;
+  flex-shrink: 0;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+.product-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.product-info {
+  text-align: left;
+}
+
+.product-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+  white-space: nowrap;       
+  overflow: hidden;          
+  text-overflow: ellipsis;   
+  max-width: 100%;   
+  text-decoration: none;       
+}
+
+.product-title:hover {
+  text-decoration: underline;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0.3rem 0;
+  color: #111;
+}
+
+.product-stock {
+  font-size: 0.85rem;
+  margin: -2px 0 3px;
+}
+
+.product-stock.in {
+  color: #007600; /* Amazon green */
+  font-weight: 500;
+}
+
+.product-stock.low {
+  color: #b12704; /* Amazon red */
+  font-weight: 500;
+}
+
+.product-stock.out {
+  color: #555;
+  font-style: italic;
+}
+
+.add-to-cart {
+  width: 100%;
+  background: #ff6600; /* Orange */
+  border: 1px solid #e65c00;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.2s, border 0.2s;
+}
+
+.add-to-cart:hover {
+  background: #e65c00;
+  border: 1px solid #cc5200;
+}
+
+.add-to-cart:disabled {
+  background: #ddd;
+  color: #666;
+  cursor: not-allowed;
+  border: 1px solid #ccc;
+}
+
+.stock-meter {
+  margin-top: -10px;
+}
+
+.stock-meter meter {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #eee;
+}
+
+.stock-meter p {
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-card {
+    max-width: 100%; 
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .product-card {
+    width: 50%;          
+    max-width: none;    
+    margin: 0;           
+    padding: 0.5rem;     
+  }
+
+  .product-price {
+    font-size: 1rem;
+  }
+
+  .product-title {
+    font-size: 0.9rem;
+  }
+
+  .product-stock {
+    font-size: 0.8rem;
+  }
+
+  .add-to-cart {
+    font-size: 0.85rem;
+    padding: 0.45rem;
+  }
+}
