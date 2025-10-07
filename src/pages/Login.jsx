@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom"; // import useNavigate
+import { FcGoogle } from "react-icons/fc"; // Google icon
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/auth.css";
 
 export default function Login() {
@@ -8,15 +9,17 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const navigate = useNavigate(); // initialize navigate
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Email:", email, "Password:", password);
-
-    // Here you would normally call your login API
-    // If login is successful:
     navigate("/"); // redirect to home page
+  };
+
+  const handleGoogleLogin = () => {
+    console.log("Continue with Google clicked");
+    // Add Google OAuth logic here
   };
 
   return (
@@ -50,7 +53,7 @@ export default function Login() {
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </span>
           </div>
-          
+
           <button type="submit" className="login-btn">Sign In</button>
         </form>
 
@@ -59,6 +62,12 @@ export default function Login() {
         <div className="divider">
           <span>or</span>
         </div>
+
+        {/* Continue with Google Button */}
+        <button className="google-btn" onClick={handleGoogleLogin}>
+          <FcGoogle className="google-icon" />
+          Continue with Google
+        </button>
 
         <Link to="/signup">
           <button className="create-account-btn">Create Your Account</button>
