@@ -151,7 +151,7 @@
   position: absolute;
   right: 0.75rem;
   cursor: pointer;
-  color: #555;
+  color: #555; 
   font-size: 1.2rem;
 }
 
@@ -161,6 +161,34 @@
   color: #555;
   margin-bottom: 1rem;
   line-height: 1.4;
+}
+
+/* Google login button */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background-color: #fff;
+  color: #444;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.google-btn:hover {
+  background-color: #f7f7f7;
+  border-color: #aaa;
+}
+
+.google-icon {
+  font-size: 1.3rem;
 }
 
 
