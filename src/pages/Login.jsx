@@ -117,16 +117,7 @@ export default function Login() {
               </div>
             </div>
 
-            <div className="remember-forgot">
-              <div className="remember-me">
-                <input
-                  type="checkbox"
-                  id="rememberMe"
-                  checked={rememberMe}
-                  onChange={() => setRememberMe(!rememberMe)}
-                />
-                <label htmlFor="rememberMe">Remember me</label>
-              </div>
+            <div className="forgot-only">
               <Link to="/forgot-password" className="forgot-link">
                 Forgot Password?
               </Link>
@@ -161,6 +152,7 @@ export default function Login() {
     </GoogleOAuthProvider>
   );
 }
+
 
 
 
