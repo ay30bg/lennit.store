@@ -82,7 +82,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
-import { useAuth } from "../App"; // Assuming useAuth is defined in App.js
+import { useAuth } from "../context/AuthContext";
 import "../styles/auth.css";
 
 export default function Login() {
@@ -240,3 +240,4 @@ export default function Login() {
     </GoogleOAuthProvider>
   );
 }
+
