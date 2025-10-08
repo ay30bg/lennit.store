@@ -148,14 +148,19 @@
   transform: scale(1.02);
 }
 
-/* Secure checkout note */
+/* ===== Secure Checkout Note ===== */
 .secure-checkout {
-  margin-top: 12px;
-  font-size: 0.85rem;
-  color: #555;
-  align-items: center;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #2e7d32; /* subtle green tone for trust */
   text-align: center;
+  background: #e8f5e9;
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: block;
+  font-weight: 500;
 }
+
 
 /* ===== Responsive (Mobile) ===== */
 @media (max-width: 900px) {
@@ -181,3 +186,4 @@
   }
 
 }
+
