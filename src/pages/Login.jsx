@@ -147,7 +147,7 @@ export default function Login() {
               onError={() => setError("Google login failed. Please try again.")}
               buttonText="Continue with Google"
               size="large"
-              width="360"
+              width="345"
             />
           </div>
 
@@ -161,6 +161,7 @@ export default function Login() {
     </GoogleOAuthProvider>
   );
 }
+
 
 
 
