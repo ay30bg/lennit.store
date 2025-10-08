@@ -7,6 +7,7 @@
 }
 
 /* ===== PAGE BACKGROUND ===== */
+.auth-page,
 .login-page {
   display: flex;
   justify-content: center;
@@ -16,7 +17,8 @@
   padding: 1rem;
 }
 
-/* ===== CARD ===== */
+/* ===== CARD / CONTAINER ===== */
+.auth-container,
 .login-card {
   background-color: #fff;
   width: 100%;
@@ -28,11 +30,13 @@
   transition: transform 0.2s ease;
 }
 
+.auth-container:hover,
 .login-card:hover {
   transform: translateY(-3px);
 }
 
 /* ===== HEADING ===== */
+.auth-container h1,
 .login-card h2 {
   margin-bottom: 1rem;
   color: #222;
@@ -40,13 +44,8 @@
   font-weight: 600;
 }
 
-.subtitle {
-  color: #666;
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-}
-
 /* ===== FORM ===== */
+.auth-form,
 .login-card form {
   display: flex;
   flex-direction: column;
@@ -62,6 +61,7 @@
   display: block;
 }
 
+.auth-form input,
 .login-card input {
   width: 100%;
   padding: 0.9rem;
@@ -72,11 +72,12 @@
   transition: border-color 0.25s;
 }
 
+.auth-form input:focus,
 .login-card input:focus {
   border-color: #f68b1e;
 }
 
-/* ===== PASSWORD FIELD ===== */
+/* ===== PASSWORD FIELDS ===== */
 .password-wrapper {
   position: relative;
   display: flex;
@@ -102,71 +103,8 @@
   color: #f68b1e;
 }
 
-/* ===== REMEMBER & FORGOT ===== */
-.remember-forgot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.9rem;
-  color: #444;
-  margin-top: 0.3rem;
-}
-
-/* ===== REMEMBER ME ===== */
-.remember-me {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  user-select: none;
-  font-size: 0.92rem;
-  color: #444;
-  font-weight: 500;
-}
-
-.remember-me input[type="checkbox"] {
-  width: 10px;
-  height: 10px;
-  border: 1.5px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: #fff;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-}
-
-.remember-me input[type="checkbox"]:checked {
-  background-color: #f68b1e;
-  border-color: #f68b1e;
-}
-
-.remember-me input[type="checkbox"]:checked::after {
-  content: "✔";
-  color: #fff;
-  font-size: 0.75rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -48%);
-}
-
-.remember-me label {
-  cursor: pointer;
-}
-
-.forgot-link {
-  color: #f68b1e;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.forgot-link:hover {
-  text-decoration: underline;
-}
-
-/* ===== SIGN IN BUTTON ===== */
+/* ===== BUTTONS ===== */
+.auth-btn,
 .login-btn {
   background-color: #f68b1e;
   color: #fff;
@@ -180,10 +118,12 @@
   margin-top: 0.8rem;
 }
 
+.auth-btn:hover,
 .login-btn:hover {
   background-color: #e57a10;
 }
 
+/* ===== SPINNER ===== */
 .spinner {
   border: 3px solid #fff;
   border-top: 3px solid rgba(255, 255, 255, 0.3);
@@ -208,53 +148,15 @@
   padding: 0.75rem;
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  text-align: left;
 }
 
-/* ===== DIVIDER ===== */
-.divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 1.8rem 0;
-  color: #777;
-  font-size: 0.9rem;
-}
-
-.divider::before,
-.divider::after {
-  content: "";
-  flex: 1;
-  border-bottom: 1px solid #ddd;
-}
-
-.divider::before {
-  margin-right: 0.5em;
-}
-.divider::after {
-  margin-left: 0.5em;
-}
-
-/* ===== SOCIAL LOGIN ===== */
-.social-login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.google-btn,
-.google-login button {
-  width: 100% !important;
-  justify-content: center !important;
-  border-radius: 6px !important;
-  font-size: 1rem !important;
-  font-weight: 500 !important;
-}
-
-/* ===== AUTH LINKS ===== */
+/* ===== LINKS ===== */
 .auth-links {
   margin-top: 1.5rem;
   font-size: 0.95rem;
   color: #555;
+  text-align: center;
 }
 
 .auth-links a {
@@ -267,20 +169,64 @@
   text-decoration: underline;
 }
 
+/* ===== REMEMBER ME (for login page) ===== */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.92rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  appearance: none;
+  background-color: #fff;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.remember-me input[type="checkbox"]:checked {
+  background-color: #f68b1e;
+  border-color: #f68b1e;
+}
+
+.remember-me input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: #fff;
+  font-size: 0.75rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+}
+
+.remember-me label {
+  cursor: pointer;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 500px) {
+  .auth-container,
   .login-card {
     padding: 1.8rem;
     border-radius: 10px;
   }
 
+  .auth-container h1,
   .login-card h2 {
     font-size: 1.5rem;
   }
 
+  .auth-btn,
   .login-btn {
     font-size: 0.95rem;
   }
 }
-
-
