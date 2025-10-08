@@ -1,78 +1,242 @@
+// import React, { useState } from "react";
+// import { FaEye, FaEyeSlash } from "react-icons/fa";
+// import { FcGoogle } from "react-icons/fc"; // Google icon
+// import { Link, useNavigate } from "react-router-dom";
+// import "../styles/auth.css";
+
+// export default function Login() {
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+//   const [showPassword, setShowPassword] = useState(false);
+
+//   const navigate = useNavigate();
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     console.log("Email:", email, "Password:", password);
+//     navigate("/"); // redirect to home page
+//   };
+
+//   const handleGoogleLogin = () => {
+//     console.log("Continue with Google clicked");
+//     // Add Google OAuth logic here
+//   };
+
+//   return (
+//     <div className="login-page">
+//       <div className="login-card">
+//         <h2>Sign In</h2>
+
+//         <form onSubmit={handleSubmit}>
+//           <label>Email or mobile phone number</label>
+//           <input
+//             type="text"
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//             required
+//             placeholder="Enter email"
+//           />
+
+//           <label>Password</label>
+//           <div className="password-wrapper">
+//             <input
+//               type={showPassword ? "text" : "password"}
+//               value={password}
+//               onChange={(e) => setPassword(e.target.value)}
+//               required
+//               placeholder="Enter password"
+//             />
+//             <span
+//               className="password-toggle"
+//               onClick={() => setShowPassword(!showPassword)}
+//             >
+//               {showPassword ? <FaEyeSlash /> : <FaEye />}
+//             </span>
+//           </div>
+
+//           <button type="submit" className="login-btn">Sign In</button>
+//         </form>
+
+//         <a href="/forgot-password" className="forgot">Forgot Password?</a>
+
+//         <div className="divider">
+//           <span>or</span>
+//         </div>
+
+//         {/* Continue with Google Button */}
+//         <button className="google-btn" onClick={handleGoogleLogin}>
+//           <FcGoogle className="google-icon" />
+//           Continue with Google
+//         </button>
+
+//         <Link to="/signup">
+//           <button className="create-account-btn">Create Your Account</button>
+//         </Link>
+//       </div>
+//     </div>
+//   );
+// }
+
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc"; // Google icon
-import { Link, useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import { useAuth } from "../App"; // Assuming useAuth is defined in App.js
 import "../styles/auth.css";
 
 export default function Login() {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
+  // Handle email/password login
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password);
-    navigate("/"); // redirect to home page
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) throw new Error(data.message || "Login failed");
+
+      const { user, token } = data;
+      login({ user, token });
+
+      if (rememberMe) localStorage.setItem("authToken", token);
+
+      const redirectTo = location.state?.from || "/";
+      navigate(redirectTo, { replace: true });
+    } catch (err) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleGoogleLogin = () => {
-    console.log("Continue with Google clicked");
-    // Add Google OAuth logic here
+  // Handle Google OAuth login
+  const handleGoogleLogin = async (credentialResponse) => {
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/google-auth`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ credential: credentialResponse.credential }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) throw new Error(data.message || "Google login failed");
+
+      const { user, token } = data;
+      login({ user, token });
+
+      if (rememberMe) localStorage.setItem("authToken", token);
+
+      const redirectTo = location.state?.from || "/";
+      navigate(redirectTo, { replace: true });
+    } catch (err) {
+      setError(err.message || "Google login failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="login-page">
-      <div className="login-card">
-        <h2>Sign In</h2>
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+      <div className="login-page">
+        <div className="login-card">
+          <h2>Sign In</h2>
+          {error && <div className="error-message">{error}</div>}
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>Email or mobile phone number *</label>
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="Enter email"
+              />
+            </div>
 
-        <form onSubmit={handleSubmit}>
-          <label>Email or mobile phone number</label>
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            placeholder="Enter email"
-          />
+            <div className="form-group password-group">
+              <label>Password *</label>
+              <div className="password-wrapper">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  placeholder="Enter password"
+                />
+                <button
+                  type="button"
+                  className="toggle-password"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
+            </div>
 
-          <label>Password</label>
-          <div className="password-wrapper">
-            <input
-              type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Enter password"
-            />
-            <span
-              className="password-toggle"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </span>
+            <div className="remember-forgot">
+              <div className="remember-me">
+                <input
+                  type="checkbox"
+                  id="rememberMe"
+                  checked={rememberMe}
+                  onChange={() => setRememberMe(!rememberMe)}
+                />
+                <label htmlFor="rememberMe">Remember me</label>
+              </div>
+              <Link to="/forgot-password" className="forgot-link">
+                Forgot Password?
+              </Link>
+            </div>
+
+            <button type="submit" className="login-btn" disabled={loading}>
+              {loading ? <span className="spinner"></span> : "Sign In"}
+            </button>
+          </form>
+
+          <div className="divider">
+            <span>or</span>
           </div>
 
-          <button type="submit" className="login-btn">Sign In</button>
-        </form>
+          <div className="social-login">
+            <GoogleLogin
+              onSuccess={handleGoogleLogin}
+              onError={() => setError("Google login failed. Please try again.")}
+              buttonText="Continue with Google"
+              size="large"
+              width="320"
+            />
+          </div>
 
-        <a href="/forgot-password" className="forgot">Forgot Password?</a>
-
-        <div className="divider">
-          <span>or</span>
+          <div className="auth-links">
+            <p>
+              Not a Member? <Link to="/signup">Create Your Account</Link>
+            </p>
+          </div>
         </div>
-
-        {/* Continue with Google Button */}
-        <button className="google-btn" onClick={handleGoogleLogin}>
-          <FcGoogle className="google-icon" />
-          Continue with Google
-        </button>
-
-        <Link to="/signup">
-          <button className="create-account-btn">Create Your Account</button>
-        </Link>
       </div>
-    </div>
+    </GoogleOAuthProvider>
   );
 }
