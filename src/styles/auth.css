@@ -156,18 +156,20 @@
   color: #444;
 }
 
-/* Remember me */
+/* ===== REMEMBER ME ===== */
 .remember-me {
   display: flex;
   align-items: center;
   gap: 6px;
   cursor: pointer;
   user-select: none;
+  font-size: 0.9rem;
+  color: #444;
 }
 
 .remember-me input[type="checkbox"] {
-  width: 5px;
-  height: 5px;
+  width: 15px;              /* smaller, cleaner size */
+  height: 15px;
   appearance: none;
   border: 1.5px solid #ccc;
   border-radius: 4px;
@@ -189,11 +191,11 @@
 .remember-me input[type="checkbox"]:checked::after {
   content: "✔";
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 0.65rem;        /* adjusted to fit smaller box */
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -45%);
+  transform: translate(-50%, -46%);
 }
 
 .remember-me label {
@@ -201,6 +203,7 @@
   color: #333;
   font-weight: 500;
 }
+
 
 /* Forgot password link */
 .forgot-link {
@@ -261,4 +264,5 @@
     align-self: flex-end;
   }
 }
+
 
