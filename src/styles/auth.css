@@ -30,6 +30,11 @@
   transition: transform 0.2s ease;
 }
 
+.auth-container:hover,
+.login-card:hover {
+  transform: translateY(-3px);
+}
+
 /* ===== HEADING ===== */
 .auth-container h1,
 .login-card h2 {
@@ -146,71 +151,18 @@
   text-align: left;
 }
 
-/* ===== REMEMBER + FORGOT SECTION ===== */
-.remember-forgot {
+/* ===== FORGOT PASSWORD (Single Link) ===== */
+.forgot-only {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0.6rem 0 0.2rem;
-  font-size: 0.92rem;
-  color: #444;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 0.3rem;
 }
 
-/* ===== REMEMBER ME ===== */
-.remember-me {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  user-select: none;
-  font-size: 0.9rem;
-  color: #444;
-}
-
-.remember-me input[type="checkbox"] {
-  width: 14px;
-  height: 14px;
-  appearance: none;
-  border: 1.5px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-.remember-me input[type="checkbox"]:hover {
-  border-color: #f68b1e;
-}
-
-.remember-me input[type="checkbox"]:checked {
-  background-color: #f68b1e;
-  border-color: #f68b1e;
-}
-
-.remember-me input[type="checkbox"]:checked::after {
-  content: "✔";
-  color: #fff;
-  font-size: 0.65rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -46%);
-}
-
-.remember-me label {
-  cursor: pointer;
-  color: #333;
-  font-weight: 500;
-}
-
-/* Forgot password link */
 .forgot-link {
   color: #f68b1e;
   font-weight: 600;
   text-decoration: none;
+  font-size: 0.9rem;
   transition: color 0.2s ease;
 }
 
@@ -219,9 +171,36 @@
   text-decoration: underline;
 }
 
+/* ===== DIVIDER ===== */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+  color: #888;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+  margin: 0 10px;
+}
+
+/* ===== SOCIAL LOGIN ===== */
+.social-login {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
 /* ===== LINKS BELOW FORM ===== */
 .auth-links {
-  margin-top: 1.5rem;
+  margin-top: 1.2rem;
   font-size: 0.95rem;
   color: #555;
   text-align: center;
@@ -255,19 +234,20 @@
     font-size: 0.95rem;
   }
 
-  .remember-forgot {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
+  .forgot-only {
+    justify-content: flex-start;
     margin-top: 0.5rem;
   }
 
-  .remember-me {
+  .forgot-link {
     font-size: 0.88rem;
   }
 
-  .forgot-link {
-    align-self: flex-start;
-    font-size: 0.88rem;
+  .divider {
+    font-size: 0.85rem;
+  }
+
+  .auth-links {
+    font-size: 0.9rem;
   }
 }
