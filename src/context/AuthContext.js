@@ -11,7 +11,7 @@ export function AuthProvider({ children }) {
 
   const login = ({ user, token }) => {
     setAuth({ user, token });
-    localStorage.setItem("authToken", token); // Persist token
+    localStorage.setItem("authToken", token); // Persist token for "Remember Me"
   };
 
   const logout = () => {
