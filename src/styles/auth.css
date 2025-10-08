@@ -151,7 +151,76 @@
   text-align: left;
 }
 
-/* ===== LINKS ===== */
+/* ===== REMEMBER + FORGOT SECTION ===== */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.6rem 0 0.2rem;
+  font-size: 0.92rem;
+  color: #444;
+}
+
+/* Remember me */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  appearance: none;
+  border: 1.5px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.remember-me input[type="checkbox"]:hover {
+  border-color: #f68b1e;
+}
+
+.remember-me input[type="checkbox"]:checked {
+  background-color: #f68b1e;
+  border-color: #f68b1e;
+}
+
+.remember-me input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: #fff;
+  font-size: 0.75rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+}
+
+.remember-me label {
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Forgot password link */
+.forgot-link {
+  color: #f68b1e;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+  color: #e57a10;
+  text-decoration: underline;
+}
+
+/* ===== LINKS BELOW FORM ===== */
 .auth-links {
   margin-top: 1.5rem;
   font-size: 0.95rem;
@@ -167,49 +236,6 @@
 
 .auth-links a:hover {
   text-decoration: underline;
-}
-
-/* ===== REMEMBER ME (for login page) ===== */
-.remember-me {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  user-select: none;
-  font-size: 0.92rem;
-  color: #444;
-  font-weight: 500;
-}
-
-.remember-me input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  border: 1.5px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  appearance: none;
-  background-color: #fff;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-}
-
-.remember-me input[type="checkbox"]:checked {
-  background-color: #f68b1e;
-  border-color: #f68b1e;
-}
-
-.remember-me input[type="checkbox"]:checked::after {
-  content: "✔";
-  color: #fff;
-  font-size: 0.75rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -48%);
-}
-
-.remember-me label {
-  cursor: pointer;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -228,5 +254,15 @@
   .auth-btn,
   .login-btn {
     font-size: 0.95rem;
+  }
+
+  .remember-forgot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .forgot-link {
+    align-self: flex-end;
   }
 }
