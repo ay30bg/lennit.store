@@ -153,6 +153,7 @@
   margin-top: 12px;
   font-size: 0.85rem;
   color: #555;
+  align-items: center;
   text-align: center;
 }
 
@@ -178,4 +179,5 @@
     position: relative;
     top: unset;
   }
+
 }
