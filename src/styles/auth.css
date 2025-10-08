@@ -125,8 +125,8 @@
 }
 
 .remember-me input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+  width: 10px;
+  height: 10px;
   border: 1.5px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
@@ -282,4 +282,5 @@
     font-size: 0.95rem;
   }
 }
+
 
