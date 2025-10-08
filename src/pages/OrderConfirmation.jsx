@@ -1,14 +1,26 @@
-// import React from "react";
+// import React, { useEffect, useState } from "react";
 // import { useLocation, Link } from "react-router-dom";
 // import "../styles/orderConfirmation.css";
 
 // export default function OrderConfirmation() {
 //   const location = useLocation();
-//   const { shipping, total, items } = location.state || {};
+//   const [order, setOrder] = useState(location.state);
 
-//   if (!shipping) {
+//   // ✅ Load from sessionStorage if no state (after refresh)
+//   useEffect(() => {
+//     if (!order) {
+//       const savedOrder = sessionStorage.getItem("lastOrder");
+//       if (savedOrder) {
+//         setOrder(JSON.parse(savedOrder));
+//       }
+//     }
+//   }, [order]);
+
+//   if (!order) {
 //     return <p>No order found.</p>;
 //   }
+
+//   const { shipping, total, items } = order;
 
 //   return (
 //     <div className="confirmation-container">
@@ -29,8 +41,8 @@
 //           <h3>🛒 Order Summary</h3>
 //           <ul>
 //             {items.map((item) => (
-//               <li key={item.id}>
-//                 {item.name} (x{item.qty})  
+//               <li key={`${item.id}-${item.variation || "default"}`}>
+//                 {item.name} {item.variation ? `(${item.variation})` : ""} (x{item.qty})
 //                 <span className="item-price">
 //                   ₦{(item.price * item.qty).toLocaleString()}
 //                 </span>
@@ -58,7 +70,7 @@ export default function OrderConfirmation() {
   const location = useLocation();
   const [order, setOrder] = useState(location.state);
 
-  // ✅ Load from sessionStorage if no state (after refresh)
+  // ✅ Load from sessionStorage if page refreshed
   useEffect(() => {
     if (!order) {
       const savedOrder = sessionStorage.getItem("lastOrder");
@@ -72,38 +84,54 @@ export default function OrderConfirmation() {
     return <p>No order found.</p>;
   }
 
+  const DELIVERY_FEE = 7000;
   const { shipping, total, items } = order;
+  const grandTotal = total + DELIVERY_FEE;
 
   return (
     <div className="confirmation-container">
       <div className="confirmation-card">
-        <h2 className="success-title">Order Placed Successfully!</h2>
+        <h2 className="success-title">✅ Order Placed Successfully!</h2>
         <p className="success-subtext">
           Thank you for shopping with us. Your order will be delivered soon.
         </p>
 
+        {/* 📦 Shipping Details */}
         <div className="confirmation-section">
           <h3>📍 Shipping To</h3>
           <p><strong>{shipping.fullName}</strong></p>
           <p>{shipping.address}, {shipping.city}, {shipping.postalCode}</p>
-          <p>📞 {shipping.phone}</p>
+          {shipping.phone && <p>📞 {shipping.phone}</p>}
         </div>
 
+        {/* 🛒 Order Summary */}
         <div className="confirmation-section">
           <h3>🛒 Order Summary</h3>
-          <ul>
+          <ul className="order-items">
             {items.map((item) => (
-              <li key={`${item.id}-${item.variation || "default"}`}>
-                {item.name} {item.variation ? `(${item.variation})` : ""} (x{item.qty})
+              <li key={`${item.id}-${item.variation || "default"}`} className="order-item">
+                <span>
+                  {item.name} {item.variation ? `(${item.variation})` : ""} × {item.qty}
+                </span>
                 <span className="item-price">
                   ₦{(item.price * item.qty).toLocaleString()}
                 </span>
               </li>
             ))}
           </ul>
-          <h3 className="order-total">
-            Total: ₦{total.toLocaleString()}
-          </h3>
+
+          {/* 💰 Breakdown */}
+          <div className="order-breakdown">
+            <p>
+              Items Subtotal: <span>₦{total.toLocaleString()}</span>
+            </p>
+            <p>
+              Delivery Fee: <span>₦{DELIVERY_FEE.toLocaleString()}</span>
+            </p>
+            <h3 className="order-total">
+              Total: <span>₦{grandTotal.toLocaleString()}</span>
+            </h3>
+          </div>
         </div>
 
         <Link to="/">
