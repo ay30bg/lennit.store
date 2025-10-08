@@ -1,89 +1,41 @@
-// import React, { useEffect, useState } from "react";
-// import { useLocation, Link } from "react-router-dom";
-// import "../styles/orderConfirmation.css";
-
-// export default function OrderConfirmation() {
-//   const location = useLocation();
-//   const [order, setOrder] = useState(location.state);
-
-//   // ✅ Load from sessionStorage if no state (after refresh)
-//   useEffect(() => {
-//     if (!order) {
-//       const savedOrder = sessionStorage.getItem("lastOrder");
-//       if (savedOrder) {
-//         setOrder(JSON.parse(savedOrder));
-//       }
-//     }
-//   }, [order]);
-
-//   if (!order) {
-//     return <p>No order found.</p>;
-//   }
-
-//   const { shipping, total, items } = order;
-
-//   return (
-//     <div className="confirmation-container">
-//       <div className="confirmation-card">
-//         <h2 className="success-title">Order Placed Successfully!</h2>
-//         <p className="success-subtext">
-//           Thank you for shopping with us. Your order will be delivered soon.
-//         </p>
-
-//         <div className="confirmation-section">
-//           <h3>📍 Shipping To</h3>
-//           <p><strong>{shipping.fullName}</strong></p>
-//           <p>{shipping.address}, {shipping.city}, {shipping.postalCode}</p>
-//           <p>📞 {shipping.phone}</p>
-//         </div>
-
-//         <div className="confirmation-section">
-//           <h3>🛒 Order Summary</h3>
-//           <ul>
-//             {items.map((item) => (
-//               <li key={`${item.id}-${item.variation || "default"}`}>
-//                 {item.name} {item.variation ? `(${item.variation})` : ""} (x{item.qty})
-//                 <span className="item-price">
-//                   ₦{(item.price * item.qty).toLocaleString()}
-//                 </span>
-//               </li>
-//             ))}
-//           </ul>
-//           <h3 className="order-total">
-//             Total: ₦{total.toLocaleString()}
-//           </h3>
-//         </div>
-
-//         <Link to="/">
-//           <button className="continue-btn">Continue Shopping</button>
-//         </Link>
-//       </div>
-//     </div>
-//   );
-// }
-
 import React, { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import "../styles/orderConfirmation.css";
 
 export default function OrderConfirmation() {
   const location = useLocation();
-  const [order, setOrder] = useState(location.state);
+  const [order, setOrder] = useState(null);
 
-  // ✅ Load from sessionStorage if page refreshed
+  // ✅ Load order data: first from navigation, then from sessionStorage if missing
   useEffect(() => {
-    if (!order) {
+    const stateOrder = location.state;
+    if (stateOrder) {
+      setOrder(stateOrder);
+      sessionStorage.setItem("lastOrder", JSON.stringify(stateOrder));
+    } else {
       const savedOrder = sessionStorage.getItem("lastOrder");
       if (savedOrder) {
         setOrder(JSON.parse(savedOrder));
       }
     }
-  }, [order]);
+  }, [location.state]);
 
+  // 🚫 Prevent render errors
   if (!order) {
-    return <p>No order found.</p>;
+    return (
+      <div className="confirmation-container">
+        <div className="confirmation-card">
+          <h2>No order found 😕</h2>
+          <p>Please go back to the cart or checkout page to place an order.</p>
+          <Link to="/">
+            <button className="continue-btn">Go Home</button>
+          </Link>
+        </div>
+      </div>
+    );
   }
 
+  // ✅ Safe to destructure now
   const DELIVERY_FEE = 7000;
   const { shipping, total, items } = order;
   const grandTotal = total + DELIVERY_FEE;
@@ -96,7 +48,7 @@ export default function OrderConfirmation() {
           Thank you for shopping with us. Your order will be delivered soon.
         </p>
 
-        {/* 📦 Shipping Details */}
+        {/* 📍 Shipping Section */}
         <div className="confirmation-section">
           <h3>📍 Shipping To</h3>
           <p><strong>{shipping.fullName}</strong></p>
@@ -141,4 +93,3 @@ export default function OrderConfirmation() {
     </div>
   );
 }
-
