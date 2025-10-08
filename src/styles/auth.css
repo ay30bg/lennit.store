@@ -30,11 +30,6 @@
   transition: transform 0.2s ease;
 }
 
-.auth-container:hover,
-.login-card:hover {
-  transform: translateY(-3px);
-}
-
 /* ===== HEADING ===== */
 .auth-container h1,
 .login-card h2 {
@@ -171,8 +166,8 @@
 }
 
 .remember-me input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+  width: 5px;
+  height: 5px;
   appearance: none;
   border: 1.5px solid #ccc;
   border-radius: 4px;
@@ -266,3 +261,4 @@
     align-self: flex-end;
   }
 }
+
