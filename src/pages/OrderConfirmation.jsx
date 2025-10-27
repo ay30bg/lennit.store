@@ -85,7 +85,6 @@ export default function OrderConfirmation() {
   return (
     <div className="order-confirmation-container">
       <div className="order-success">
-        <div className="success-icon">✅</div>
         <h2>Order Confirmed!</h2>
         <p>Thank you, <strong>{shipping.fullName}</strong>! Your order has been placed successfully.</p>
         <p className="order-id">
@@ -140,3 +139,4 @@ export default function OrderConfirmation() {
     </div>
   );
 }
+
