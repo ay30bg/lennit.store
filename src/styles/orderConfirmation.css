@@ -110,7 +110,7 @@
   width: 100%;              /* ✅ Full width */
   text-align: center;       /* ✅ Center the text */
   padding: 12px 0;
-  background: #007bff;
+  background: #FFA41C;
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
@@ -120,7 +120,7 @@
 }
 
 .btn-home:hover {
-  background: #0056b3;
+  background: #FF8F00;
 }
 
 /* Empty order */
@@ -139,4 +139,5 @@
     padding: 1.5rem;
   }
 }
+
 
