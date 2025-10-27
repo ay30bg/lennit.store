@@ -107,12 +107,15 @@
 
 .btn-home {
   display: inline-block;
-  padding: 10px 20px;
+  width: 100%;              /* ✅ Full width */
+  text-align: center;       /* ✅ Center the text */
+  padding: 12px 0;
   background: #007bff;
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
+  font-size: 1rem;
   transition: background 0.3s;
 }
 
@@ -136,3 +139,4 @@
     padding: 1.5rem;
   }
 }
+
