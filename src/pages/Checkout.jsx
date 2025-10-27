@@ -13,7 +13,9 @@
 //     phone: "",
 //   });
 
-//   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+//   const DELIVERY_FEE = 7000;
+//   const itemsTotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+//   const orderTotal = itemsTotal + DELIVERY_FEE;
 //   const navigate = useNavigate();
 
 //   const handleInputChange = (e) => {
@@ -28,8 +30,12 @@
 
 //     const orderData = {
 //       shipping,
-//       total,
 //       items: cart,
+//       totals: {
+//         itemsTotal,
+//         delivery: DELIVERY_FEE,
+//         orderTotal,
+//       },
 //     };
 
 //     // ✅ Save order to sessionStorage
@@ -118,13 +124,13 @@
 //           <div className="checkout-summary">
 //             <h3>Order Summary</h3>
 //             <p>
-//               Items: <span>₦{total.toLocaleString()}</span>
+//               Items: <span>₦{itemsTotal.toLocaleString()}</span>
 //             </p>
 //             <p>
-//               Delivery: <span>₦7000.00</span>
+//               Delivery: <span>₦{DELIVERY_FEE.toLocaleString()}</span>
 //             </p>
 //             <h3 className="summary-total">
-//               Order Total: <span>₦{total.toLocaleString()}</span>
+//               Order Total: <span>₦{orderTotal.toLocaleString()}</span>
 //             </h3>
 //             <button className="place-order-btn" onClick={handlePlaceOrder}>
 //               Place your order
@@ -169,7 +175,7 @@ export default function Checkout() {
 
     const orderData = {
       shipping,
-      items: cart,
+      items: cart, // ✅ includes variation
       totals: {
         itemsTotal,
         delivery: DELIVERY_FEE,
@@ -180,7 +186,7 @@ export default function Checkout() {
     // ✅ Save order to sessionStorage
     sessionStorage.setItem("lastOrder", JSON.stringify(orderData));
 
-    // ✅ Clear cart (state + localStorage handled in context)
+    // ✅ Clear cart
     clearCart();
 
     // Redirect to confirmation page
@@ -245,9 +251,17 @@ export default function Checkout() {
               <h2>Review Your Order</h2>
               <div className="checkout-items">
                 {cart.map((item) => (
-                  <div key={item.id} className="checkout-item">
+                  <div
+                    key={`${item.id}-${item.variation || "default"}`}
+                    className="checkout-item"
+                  >
                     <div className="checkout-item-info">
-                      <span className="item-name">{item.name}</span>
+                      <span className="item-name">
+                        {item.name}
+                        {item.variation && (
+                          <span className="item-variation"> – {item.variation}</span>
+                        )}
+                      </span>
                       <span className="item-qty">Qty: {item.qty}</span>
                     </div>
                     <span className="item-price">
