@@ -1,95 +1,138 @@
-.confirmation-container {
-  display: flex;
-  justify-content: center;
-  padding: 40px 20px;
-  font-family: Arial, sans-serif;
-}
+/* ===== ORDER CONFIRMATION PAGE ===== */
 
-.confirmation-card {
+.order-confirmation-container {
+  max-width: 900px;
+  margin: 40px auto;
   background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 30px;
-  max-width: 600px;
-  width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  font-family: "Poppins", sans-serif;
+}
+
+.order-success {
   text-align: center;
-}
-
-.success-title {
-  color: #2d7a2d;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.success-subtext {
-  color: #555;
-  margin-bottom: 25px;
-}
-
-.confirmation-section {
-  text-align: left;
-  margin-bottom: 25px;
-}
-
-.confirmation-section h3 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #111;
   border-bottom: 1px solid #eee;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.success-icon {
+  font-size: 3rem;
+  color: #28a745;
+}
+
+.order-success h2 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.order-success p {
+  color: #555;
+}
+
+.order-id {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #777;
+}
+
+.order-summary-section {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.order-box {
+  background: #fafafa;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.order-box h3 {
+  margin-bottom: 1rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.order-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.order-box li {
+  padding: 5px 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #ddd;
   padding-bottom: 5px;
 }
 
-.confirmation-section p {
-  margin: 4px 0;
-  font-size: 0.95rem;
-}
-
-.confirmation-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.confirmation-section li {
+.item-details {
   display: flex;
-  justify-content: space-between;
-  padding: 6px 0;
-  border-bottom: 1px solid #f3f3f3;
-  font-size: 0.95rem;
+  flex-direction: column;
+}
+
+.item-name {
+  font-weight: 600;
 }
 
 .item-price {
-  font-weight: bold;
-  color: #b12704;
-  /* Amazon red */
+  font-weight: 600;
 }
 
-.order-total {
-  margin-top: 15px;
+.total {
+  margin-top: 0.5rem;
   font-size: 1.2rem;
-  font-weight: bold;
-  color: #b12704;
-  text-align: right;
+  color: #000;
 }
 
-.continue-btn {
-  margin-top: 20px;
-  width: 100%;
-  background: #FFA41C;
-  border: 1px solid #FF8F00;
+.order-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-home {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #007bff;
   color: #fff;
   border-radius: 8px;
-  padding: 12px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  width: 100%;
-  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
 }
 
-.continue-btn:hover {
-  background: #FF8F00;
-  border: 1px solid #e67600;
-  transform: scale(1.02);
+.btn-home:hover {
+  background: #0056b3;
+}
+
+/* Empty order */
+.order-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.order-empty h2 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .order-confirmation-container {
+    margin: 20px;
+    padding: 1.5rem;
+  }
 }
