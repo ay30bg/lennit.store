@@ -1,3 +1,142 @@
+// // import React, { useContext, useState } from "react";
+// // import { CartContext } from "../context/CartContext";
+// // import { useNavigate } from "react-router-dom";
+// // import "../styles/checkout.css";
+
+// // export default function Checkout() {
+// //   const { cart, clearCart } = useContext(CartContext);
+// //   const [shipping, setShipping] = useState({
+// //     fullName: "",
+// //     address: "",
+// //     city: "",
+// //     postalCode: "",
+// //     phone: "",
+// //   });
+
+// //   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+// //   const navigate = useNavigate();
+
+// //   const handleInputChange = (e) => {
+// //     setShipping({ ...shipping, [e.target.name]: e.target.value });
+// //   };
+
+// //   const handlePlaceOrder = () => {
+// //     if (!shipping.fullName || !shipping.address || !shipping.city) {
+// //       alert("Please fill in all required shipping details.");
+// //       return;
+// //     }
+
+// //     const orderData = {
+// //       shipping,
+// //       total,
+// //       items: cart,
+// //     };
+
+// //     // ✅ Save order to sessionStorage
+// //     sessionStorage.setItem("lastOrder", JSON.stringify(orderData));
+
+// //     // ✅ Clear cart (state + localStorage handled in context)
+// //     clearCart();
+
+// //     // Redirect to confirmation page
+// //     navigate("/order-confirmation", { state: orderData });
+// //   };
+
+// //   return (
+// //     <div className="checkout-container">
+// //       {cart.length === 0 ? (
+// //         <p>Your cart is empty.</p>
+// //       ) : (
+// //         <>
+// //           {/* LEFT SECTION */}
+// //           <div className="checkout-left">
+// //             {/* SHIPPING FORM */}
+// //             <div className="checkout-box">
+// //               <h2>Shipping Details</h2>
+// //               <form className="shipping-form">
+// //                 <input
+// //                   type="text"
+// //                   name="fullName"
+// //                   placeholder="Full Name"
+// //                   value={shipping.fullName}
+// //                   onChange={handleInputChange}
+// //                   required
+// //                 />
+// //                 <input
+// //                   type="text"
+// //                   name="address"
+// //                   placeholder="Street Address"
+// //                   value={shipping.address}
+// //                   onChange={handleInputChange}
+// //                   required
+// //                 />
+// //                 <input
+// //                   type="text"
+// //                   name="city"
+// //                   placeholder="City"
+// //                   value={shipping.city}
+// //                   onChange={handleInputChange}
+// //                   required
+// //                 />
+// //                 <input
+// //                   type="text"
+// //                   name="postalCode"
+// //                   placeholder="Postal Code"
+// //                   value={shipping.postalCode}
+// //                   onChange={handleInputChange}
+// //                 />
+// //                 <input
+// //                   type="text"
+// //                   name="phone"
+// //                   placeholder="Phone Number"
+// //                   value={shipping.phone}
+// //                   onChange={handleInputChange}
+// //                 />
+// //               </form>
+// //             </div>
+
+// //             {/* REVIEW ORDER */}
+// //             <div className="checkout-box">
+// //               <h2>Review Your Order</h2>
+// //               <div className="checkout-items">
+// //                 {cart.map((item) => (
+// //                   <div key={item.id} className="checkout-item">
+// //                     <div className="checkout-item-info">
+// //                       <span className="item-name">{item.name}</span>
+// //                       <span className="item-qty">Qty: {item.qty}</span>
+// //                     </div>
+// //                     <span className="item-price">
+// //                       ₦{(item.price * item.qty).toLocaleString()}
+// //                     </span>
+// //                   </div>
+// //                 ))}
+// //               </div>
+// //             </div>
+// //           </div>
+
+// //           {/* RIGHT SECTION */}
+// //           <div className="checkout-summary">
+// //             <h3>Order Summary</h3>
+// //             <p>
+// //               Items: <span>₦{total.toLocaleString()}</span>
+// //             </p>
+// //             <p>
+// //               Delivery: <span>₦7000.00</span>
+// //             </p>
+// //             <h3 className="summary-total">
+// //               Order Total: <span>₦{total.toLocaleString()}</span>
+// //             </h3>
+// //             <button className="place-order-btn" onClick={handlePlaceOrder}>
+// //               Place your order
+// //             </button>
+// //             <div className="secure-checkout">🔒 Secure checkout guaranteed</div>
+// //           </div>
+// //         </>
+// //       )}
+// //     </div>
+// //   );
+// // }
+
 // import React, { useContext, useState } from "react";
 // import { CartContext } from "../context/CartContext";
 // import { useNavigate } from "react-router-dom";
@@ -13,7 +152,9 @@
 //     phone: "",
 //   });
 
-//   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+//   const DELIVERY_FEE = 7000;
+//   const itemsTotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+//   const orderTotal = itemsTotal + DELIVERY_FEE;
 //   const navigate = useNavigate();
 
 //   const handleInputChange = (e) => {
@@ -28,8 +169,12 @@
 
 //     const orderData = {
 //       shipping,
-//       total,
 //       items: cart,
+//       totals: {
+//         itemsTotal,
+//         delivery: DELIVERY_FEE,
+//         orderTotal,
+//       },
 //     };
 
 //     // ✅ Save order to sessionStorage
@@ -118,13 +263,13 @@
 //           <div className="checkout-summary">
 //             <h3>Order Summary</h3>
 //             <p>
-//               Items: <span>₦{total.toLocaleString()}</span>
+//               Items: <span>₦{itemsTotal.toLocaleString()}</span>
 //             </p>
 //             <p>
-//               Delivery: <span>₦7000.00</span>
+//               Delivery: <span>₦{DELIVERY_FEE.toLocaleString()}</span>
 //             </p>
 //             <h3 className="summary-total">
-//               Order Total: <span>₦{total.toLocaleString()}</span>
+//               Order Total: <span>₦{orderTotal.toLocaleString()}</span>
 //             </h3>
 //             <button className="place-order-btn" onClick={handlePlaceOrder}>
 //               Place your order
@@ -137,150 +282,97 @@
 //   );
 // }
 
-import React, { useContext, useState } from "react";
-import { CartContext } from "../context/CartContext";
-import { useNavigate } from "react-router-dom";
-import "../styles/checkout.css";
 
-export default function Checkout() {
-  const { cart, clearCart } = useContext(CartContext);
-  const [shipping, setShipping] = useState({
-    fullName: "",
-    address: "",
-    city: "",
-    postalCode: "",
-    phone: "",
-  });
+import React, { useEffect, useState } from "react";
+import { useLocation, Link } from "react-router-dom";
+import "../styles/orderConfirmation.css";
 
-  const DELIVERY_FEE = 7000;
-  const itemsTotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-  const orderTotal = itemsTotal + DELIVERY_FEE;
-  const navigate = useNavigate();
+export default function OrderConfirmation() {
+  const location = useLocation();
+  const [order, setOrder] = useState(location.state || null);
 
-  const handleInputChange = (e) => {
-    setShipping({ ...shipping, [e.target.name]: e.target.value });
-  };
-
-  const handlePlaceOrder = () => {
-    if (!shipping.fullName || !shipping.address || !shipping.city) {
-      alert("Please fill in all required shipping details.");
-      return;
+  // ✅ Save order to sessionStorage (for refresh persistence)
+  useEffect(() => {
+    if (order) {
+      sessionStorage.setItem("lastOrder", JSON.stringify(order));
     }
+  }, [order]);
 
-    const orderData = {
-      shipping,
-      items: cart,
-      totals: {
-        itemsTotal,
-        delivery: DELIVERY_FEE,
-        orderTotal,
-      },
-    };
+  // ✅ Recover order from sessionStorage if missing (after refresh)
+  useEffect(() => {
+    if (!order) {
+      const savedOrder = sessionStorage.getItem("lastOrder");
+      if (savedOrder) {
+        setOrder(JSON.parse(savedOrder));
+      }
+    }
+  }, [order]);
 
-    // ✅ Save order to sessionStorage
-    sessionStorage.setItem("lastOrder", JSON.stringify(orderData));
+  // 🧠 Debug (optional)
+  useEffect(() => {
+    console.log("Loaded order:", order);
+  }, [order]);
 
-    // ✅ Clear cart (state + localStorage handled in context)
-    clearCart();
+  // ✅ Handle missing order case
+  if (!order) {
+    return (
+      <div style={{ textAlign: "center", marginTop: "40px" }}>
+        <p>No order found.</p>
+        <Link to="/">
+          <button className="continue-btn">Go Back Home</button>
+        </Link>
+      </div>
+    );
+  }
 
-    // Redirect to confirmation page
-    navigate("/order-confirmation", { state: orderData });
-  };
+  // ✅ Destructure order data safely
+  const { shipping, items, totals } = order;
 
   return (
-    <div className="checkout-container">
-      {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
-        <>
-          {/* LEFT SECTION */}
-          <div className="checkout-left">
-            {/* SHIPPING FORM */}
-            <div className="checkout-box">
-              <h2>Shipping Details</h2>
-              <form className="shipping-form">
-                <input
-                  type="text"
-                  name="fullName"
-                  placeholder="Full Name"
-                  value={shipping.fullName}
-                  onChange={handleInputChange}
-                  required
-                />
-                <input
-                  type="text"
-                  name="address"
-                  placeholder="Street Address"
-                  value={shipping.address}
-                  onChange={handleInputChange}
-                  required
-                />
-                <input
-                  type="text"
-                  name="city"
-                  placeholder="City"
-                  value={shipping.city}
-                  onChange={handleInputChange}
-                  required
-                />
-                <input
-                  type="text"
-                  name="postalCode"
-                  placeholder="Postal Code"
-                  value={shipping.postalCode}
-                  onChange={handleInputChange}
-                />
-                <input
-                  type="text"
-                  name="phone"
-                  placeholder="Phone Number"
-                  value={shipping.phone}
-                  onChange={handleInputChange}
-                />
-              </form>
-            </div>
+    <div className="confirmation-container">
+      <div className="confirmation-card">
+        <h2 className="success-title">✅ Order Placed Successfully!</h2>
+        <p className="success-subtext">
+          Thank you for shopping with us. Your order will be delivered soon.
+        </p>
 
-            {/* REVIEW ORDER */}
-            <div className="checkout-box">
-              <h2>Review Your Order</h2>
-              <div className="checkout-items">
-                {cart.map((item) => (
-                  <div key={item.id} className="checkout-item">
-                    <div className="checkout-item-info">
-                      <span className="item-name">{item.name}</span>
-                      <span className="item-qty">Qty: {item.qty}</span>
-                    </div>
-                    <span className="item-price">
-                      ₦{(item.price * item.qty).toLocaleString()}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+        {/* Shipping Section */}
+        <div className="confirmation-section">
+          <h3>📍 Shipping To</h3>
+          <p><strong>{shipping?.fullName}</strong></p>
+          <p>{shipping?.address}, {shipping?.city}, {shipping?.postalCode}</p>
+          <p>📞 {shipping?.phone || "Not provided"}</p>
+        </div>
 
-          {/* RIGHT SECTION */}
-          <div className="checkout-summary">
-            <h3>Order Summary</h3>
-            <p>
-              Items: <span>₦{itemsTotal.toLocaleString()}</span>
-            </p>
-            <p>
-              Delivery: <span>₦{DELIVERY_FEE.toLocaleString()}</span>
-            </p>
-            <h3 className="summary-total">
-              Order Total: <span>₦{orderTotal.toLocaleString()}</span>
+        {/* Order Items */}
+        <div className="confirmation-section">
+          <h3>🛒 Order Summary</h3>
+          <ul>
+            {items?.map((item, i) => (
+              <li key={i}>
+                {item.name} {item.variation ? `(${item.variation})` : ""} (x{item.qty})
+                <span className="item-price">
+                  ₦{(item.price * item.qty).toLocaleString()}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="order-breakdown">
+            <p>Items Total: ₦{totals.itemsTotal.toLocaleString()}</p>
+            <p>Delivery Fee: ₦{totals.delivery.toLocaleString()}</p>
+            <h3 className="order-total">
+              Total: ₦{totals.orderTotal.toLocaleString()}
             </h3>
-            <button className="place-order-btn" onClick={handlePlaceOrder}>
-              Place your order
-            </button>
-            <div className="secure-checkout">🔒 Secure checkout guaranteed</div>
           </div>
-        </>
-      )}
+        </div>
+
+        <Link to="/">
+          <button className="continue-btn">Continue Shopping</button>
+        </Link>
+      </div>
     </div>
   );
 }
-
 
 
