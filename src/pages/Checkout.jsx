@@ -404,7 +404,7 @@ export default function Checkout() {
     const paystack = new PaystackPop();
 
     paystack.newTransaction({
-      key: process.env.REACT_APP_PAYSTACK_PUBLIC_KEY || "pk_test_xxxxx", // Use .env key
+      key: process.env.REACT_APP_PAYSTACK_PUBLIC_KEY || "pk_live_15b47c33f91d11f55a5fb4e68652bddda6cb44a6", // Use .env key
       email: `${shipping.fullName.split(" ")[0].toLowerCase()}@example.com`,
       amount: orderTotal * 100, // in kobo
       currency: "NGN",
@@ -529,3 +529,4 @@ export default function Checkout() {
     </div>
   );
 }
+
